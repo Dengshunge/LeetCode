@@ -24,3 +24,16 @@
 具体解答https://leetcode-cn.com/problems/add-two-numbers/solution/  
 另外，变式是说如果数字是按顺序存储在链表中，例如123：1-2-3，此时要如何相加呢？  
 我的想法是，类似于《剑指offer》的反转链表，可以利用辅助空间（两个栈）。
+
+##  无重复字符的最长子串
+题目：[给定一个字符串，找出不含有重复字符的最长子串的长度。](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/description/)  
+解析：这道题是《剑指offer》的面试题48  
+其思路是这样的，利用空间来换取效率，需要一个哈希表，只需要遍历一次字符串。  
+如果第i个字符没有出现过，则让curlength加一。  
+如果第i个字符出现过，设第i个字符和上一次出现过的距离为d：  
+    1. 如果d>curlength，说明第i个字符不在当前子串中，可以curlength加一  
+    2. 如果d<=curlength，说明第i个字符在当前子串中，此时让curlength=d  
+《剑指offer》上利用了动态规划的想法来讲解，和我的简易思路一致。
+
+另外leetcode上有种“滑动窗口的解法”，其思路是，判断第i个字符是否在[j,i-1]的子串中，如果存在，则滑动窗口变成[i`+1,i];
+如果不存在，则滑动窗口为[j,i]
