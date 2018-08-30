@@ -42,3 +42,10 @@
 题目：[给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为1000。](https://leetcode-cn.com/problems/longest-palindromic-substring/description/)  
 解析：可以使用中心扩展法，找到一个中心，向两边扩展，当不是回文就退出，当是回文，则继续扩展。  
 一个字符串一共有2n-1个中心，分别是n个类似于[aba]这样的字符串，和n-1个类似于[abba]这样的字符串。
+
+## Ksum总结
+Ksum表示k个数进行相加。
+1. 2Sum即2个数进行相加，思路一是利用hash表，将target-a作为key，a的index作为value，存入hash中，遍历一次，即可得到答案。思路二是先对数组进行排序，然后设置双指针left和right，当\*left+\*right>0时，移动right，否则移动left。当\*left+\*right==target时，存入list。这种算法记得要处理重复元素。
+2. 3Sum可以将其退化成2Sum，枚举数组里面的所有元素，让这个元素等于2Sum中的target。
+3. 4Sum退化成3Sum
+4. Ksum可以退化成(K-1)sum，此时复杂度是O(N^(K-1))
