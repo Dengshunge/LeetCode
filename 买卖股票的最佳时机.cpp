@@ -31,7 +31,7 @@ public:
 			if (cur > maxVal)
 				maxVal = cur;
 		}
-		return maxVal;
+		return maxVal > 0 ? maxVal : 0;
 	}
 };
 
