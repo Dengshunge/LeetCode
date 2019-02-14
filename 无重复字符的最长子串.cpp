@@ -59,6 +59,28 @@ public:
 		}
 		return maxLength;
 	}
+	
+	//update:2019.2.14
+	int lengthOfLongestSubstring3(string s) 
+	{
+		int max = 0;
+		unordered_set<char>t;
+		auto p = s.begin(), q = s.begin();
+		while (q != s.end())
+		{
+			if (t.find(*q) == t.end())
+				t.insert(*q++);
+			else
+			{
+				if (t.size()>max) max = t.size();
+				while (t.find(*q) != t.end())
+					t.erase(*p++);
+				t.insert(*q++);
+			}
+		}
+		if (t.size()>max) max = t.size();
+		return max;
+	}
 };
 
 
