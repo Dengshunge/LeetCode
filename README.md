@@ -67,6 +67,11 @@ update 2019.2.27
 update 2019.2.28  
 将x取余，得到每位的值，加上res上，再讲x/10。这道题主要考察的应该是越界。
 
+## 字符串转换整数 (atoi)
+题目：[请你来实现一个 atoi 函数，使其能将字符串转换成整数。](https://leetcode-cn.com/problems/string-to-integer-atoi/)  
+update 2019.2.28  
+第二次做这道题的时候，考虑还是不全，没考虑到'+'号，导致出错。而且，往前的写法，将整数和负数分开处理，思路相对更加清晰，值得推荐。
+
 ## Ksum总结
 Ksum表示k个数进行相加。
 1. 2Sum即2个数进行相加，思路一是利用hash表，将target-a作为key，a的index作为value，存入hash中，遍历一次，即可得到答案。思路二是先对数组进行排序，然后设置双指针left和right，当\*left+\*right>0时，移动right，否则移动left。当\*left+\*right==target时，存入list。这种算法记得要处理重复元素。
