@@ -22,6 +22,74 @@ public:
 		}
 		return res;
 	}
+	
+	//
+	string intToRoman(int num) {
+		string roman;
+		while (num) {
+			if (num >= 1000) 
+			{ num -= 1000; roman += 'M'; }
+			else 
+			{
+				if (num >= 900) 
+				{ num -= 900; roman += 'C'; roman += 'M'; }
+				else 
+				{
+					if (num >= 500) 
+					{ num -= 500; roman += 'D'; }
+					else 
+					{
+						if (num >= 400) 
+						{ num -= 400; roman += 'C'; roman += 'D'; }
+						else 
+						{
+							if (num >= 100) 
+							{ num -= 100; roman += 'C'; }
+							else 
+							{
+								if (num >= 90) 
+								{ num -= 90; roman += 'X'; roman += 'C'; }
+								else 
+								{
+									if (num >= 50) 
+									{ num -= 50; roman += 'L'; }
+									else 
+									{
+										if (num >= 40) 
+										{ num -= 40; roman += 'X'; roman += 'L'; }
+										else 
+										{
+											if (num >= 10) 
+											{ num -= 10; roman += 'X'; }
+											else 
+											{
+												if (num >= 9) 
+												{ num -= 9; roman += 'I'; roman += 'X'; }
+												else 
+												{
+													if (num >= 5) 
+													{ num -= 5; roman += 'V'; }
+													else 
+													{
+														if (num >= 4) 
+														{ num -= 4; roman += 'I'; roman += 'V'; }
+														else 
+														{ num -= 1; roman += 'I'; }
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return roman;
+	}
+	
 private:
 	//4是说明有4个，第一个10说明每个里面有10个字符串，第二个10说明每个字符串有10个字符
 	const char Roman[4][10][10]={
