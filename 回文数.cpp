@@ -38,6 +38,21 @@ public:
 		}
 		return x == revertedNumber || x == revertedNumber / 10;
 	}
+	
+	//update 2019.3.1
+	bool isPalindrome2(int x) 
+	{
+		if (x<0||(x!=0&&x%10==0))
+		    return false;
+		int num=0;
+		while (x>num)
+		{
+		    int digit = x%10;
+		    num = num*10+digit;
+		    x /= 10;
+		}
+		return (num==x || num /10 == x);
+    	}
 };
 
 
