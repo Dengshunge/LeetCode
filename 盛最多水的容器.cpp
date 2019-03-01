@@ -51,6 +51,24 @@ public:
 		}
 		return area;
 	}
+	
+	//update 2019.3.1
+	int maxArea(vector<int>& height) 
+	{
+		int val = 0;
+		int left = 0, right = height.size() - 1;
+		while (right>left)
+		{
+			int cur_val = (right - left)*min(height[left], height[right]);
+			if (cur_val>val)
+				val = cur_val;
+			if (height[left]>height[right])
+				--right;
+			else
+				++left;
+		}
+		return val;
+	}
 };
 
 
