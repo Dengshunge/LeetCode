@@ -45,6 +45,70 @@ public:
 	}
 };
 
+//
+class Solution2 {
+public:
+	string longestCommonPrefix(vector<string>& strs)
+	{
+		int len = strs.size();
+		if (len == 0)
+			return "";
+		if (len == 1)
+			return strs[0];
+		string res = findTowLongest(strs[0], strs[1]);
+		for (int i = 2; i<len; ++i)
+		{
+			if (res == "")
+				return res;
+			res = findTowLongest(res, strs[i]);
+		}
+		return res;
+	}
+
+	string findTowLongest(string &s1, string &s2)
+	{
+		string res;
+		for (int i = 0; i<s1.size() && i<s2.size(); ++i)
+		{
+			if (s1[i] == s2[i])
+				res += s1[i];
+			else
+				break;
+		}
+		return res;
+	}
+
+	string longestCommonPrefix_network(vector<string>& strs) {
+
+		string common_for = "";
+		size_t common_len = 0;
+
+		if (strs.empty())   return common_for;
+
+		for (auto iter = strs.cbegin();iter != strs.cend();++iter)
+		{
+			if (iter == strs.cbegin()) {
+				common_for = *iter;
+				common_len = common_for.length();
+				continue;
+			}
+
+			common_len = common_len < iter->length() ? common_len : iter->length();
+
+			for (int i = 0;i < common_len;++i) 
+			{
+				if (common_for[i] != (*iter)[i]) 
+				{
+					common_len = i;
+					break;
+				}
+			}
+		}
+
+		return common_for.erase(common_len);
+	}
+};
+
 int main()
 {
 	Solution a;
