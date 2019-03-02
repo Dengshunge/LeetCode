@@ -87,6 +87,12 @@ update 2019.3.1
 update 2019.3.1  
 第二次做，依然采用建立一个查询表来做，但跑出来的成绩不高。看了别人的方法，采用多个if分支来进行判断，不断减去数值，来叠加数字，这种方法跑出来的成绩较好，省去了一定的空间。
 
+## 罗马数字转整数
+题目：[给定一个罗马数字，将其转换成整数](https://leetcode-cn.com/problems/roman-to-integer/)  
+update 2019.3.2  
+解法一，就是判断第i位与第i+1位的关系，用if-else分支来不断进行累加和改变i。解法二，不需要解法一如此如此麻烦，利用一个flag标志位，如果第i位小于第i+1位，则flag为负，否则为正。当第i位小于第i+1位，res减去该s[i]对应的值。
+
+
 ## Ksum总结
 Ksum表示k个数进行相加。
 1. 2Sum即2个数进行相加，思路一是利用hash表，将target-a作为key，a的index作为value，存入hash中，遍历一次，即可得到答案。思路二是先对数组进行排序，然后设置双指针left和right，当\*left+\*right>0时，移动right，否则移动left。当\*left+\*right==target时，存入list。这种算法记得要处理重复元素。
