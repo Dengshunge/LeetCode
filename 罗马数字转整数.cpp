@@ -83,6 +83,111 @@ public:
 	}
 };
 
+//update 2019.3.2
+class Solution3 {
+public:
+	int romanToInt(string s)
+	{
+		int res = 0;
+		int i = 0, len = s.size();
+		while (i<len)
+		{
+			if (s[i] == 'I')
+			{
+				if (i + 1<len&&s[i + 1] == 'V')
+				{
+					res += 4;
+					i = i + 2;
+				}
+				else if (i + 1<len&&s[i + 1] == 'X')
+				{
+					res += 9;
+					i = i + 2;
+				}
+				else
+				{
+					res += 1;
+					++i;
+				}
+			}
+			else if (s[i] == 'V')
+			{
+				res += 5;
+				++i;
+			}
+			else if (s[i] == 'X')
+			{
+				if (i + 1<len&&s[i + 1] == 'L')
+				{
+					res += 40;
+					i += 2;
+				}
+				else if (i + 1<len &&s[i + 1] == 'C')
+				{
+					res += 90;
+					i += 2;
+				}
+				else
+				{
+					res += 10;
+					++i;
+				}
+			}
+			else if (s[i] == 'L')
+			{
+				res += 50;
+				++i;
+			}
+			else if (s[i] == 'C')
+			{
+				if (i + 1<len&&s[i + 1] == 'D')
+				{
+					res += 400;
+					i += 2;
+				}
+				else if (i + 1<len&&s[i + 1] == 'M')
+				{
+					res += 900;
+					i += 2;
+				}
+				else
+				{
+					res += 100;
+					++i;
+				}
+			}
+			else if (s[i] == 'D')
+			{
+				res += 500;
+				++i;
+			}
+			else if (s[i] == 'M')
+			{
+				res += 1000;
+				++i;
+			}
+		}
+		return res;
+	}
+
+	int romanToInt_newwork(string s)
+	{
+		int l = int(s.size()), res = 0;
+		if (l<1) 
+			return res;
+		map<char, int> ro = { { 'I',1 },{ 'V',5 },{ 'X',10 },{ 'L',50 },{ 'C',100 },{ 'D',500 },{ 'M',1000 } };
+		for (int i = 0; i<l; ++i) 
+		{
+			int flag = 1;
+			if (i > 0 && ro[s.at(l - 1 - i)] < ro[s.at(l - i)])
+				flag = -1;
+			res += ro[s.at(l - 1 - i)] * flag;
+		}
+		return res;
+	}
+};
+
+
 int main()
 {
 	Solution a;
