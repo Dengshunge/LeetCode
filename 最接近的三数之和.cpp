@@ -51,6 +51,32 @@ public:
 		}
 		return res;
 	}
+	
+	//update 2019.3.18
+	int threeSumClosest2(vector<int>& nums, int target)
+	{
+		int res = nums[0] + nums[1] + nums[2];
+		sort(nums.begin(), nums.end());
+		int len = nums.size();
+		for (int i = 0; i<len - 2; ++i)
+		{
+			for (int m = i + 1, n = len - 1; m<n;)
+			{
+				int tmp = nums[i] + nums[m] + nums[n];
+				if (abs(target - res)>abs(target - tmp))
+					res = tmp;
+				if (target>tmp)
+					++m;
+				else if (target<tmp)
+					--n;
+				else
+					//break;
+					//不需要break了，两者相等时，是最小的，所以返回target即可
+					return target;
+			}
+		}
+		return res;
+	}
 };
 
 int main()
