@@ -81,6 +81,31 @@ public:
 		if (t.size()>max) max = t.size();
 		return max;
 	}
+	
+	//update:2019.9.11
+	//与2的思路一致
+	int lengthOfLongestSubstring4(string s)
+	{
+		int maxlength = 0;
+		int len = 0;
+		vector<int> letter(128, -1);
+		for (int i = 0; i < s.size(); ++i)
+		{
+			int dif = i - letter[s[i]];
+			if (letter[s[i]] == -1 || dif > len)
+			{
+				len++;
+			}
+			else
+			{
+				len = dif;
+			}
+			letter[s[i]] = i;
+			maxlength = max(maxlength, len);
+		}
+		return maxlength;
+	}
+
 };
 
 
