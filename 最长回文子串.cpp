@@ -44,6 +44,47 @@ private:
 	}
 };
 
+//2019.9.16
+//和上述方法一样，使用了中心扩增的方法
+//面对对称的问题，可以使用中心扩展的方法，即从中间向两边进行考虑
+class Solution2 {
+public:
+	string longestPalindrome(string s)
+	{
+		if (s.empty())
+			return s;
+		int length = s.size();
+		int maxlen = 1;
+		string maxstr = "";
+		for (int i = 0; i < length; ++i)
+		{
+			//回文为奇数
+			int odd = judge(s, i, i);
+			//回文为偶数
+			int even = judge(s, i, i + 1);
+			string tmp = (odd > even) ? s.substr(i - int(odd / 2), odd) : s.substr(i - int(even / 2) + 1, even);
+			if (tmp.size() >= maxlen)
+			{
+				maxlen = tmp.size();
+				maxstr = tmp;
+			}
+		}
+		return maxstr;
+	}
+private:
+	int judge(string s, int left, int right)
+	{
+		for (; left >= 0 && right < s.size(); left--, right++)
+		{
+			if (s[left] != s[right])
+			{
+				break;
+			}
+		}
+		return right - left - 1;
+	}
+};
+
 int main() 
 {
 	string s = "cbbd";
