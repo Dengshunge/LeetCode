@@ -25,6 +25,24 @@ public:
 		}
 		return res;
 	}
+	
+	
+	// update 2019.9.18
+	int reverse2(int x) 
+	{
+		int res = 0;
+		bool positive = (x >= 0) ? true : false;
+		while (x != 0)
+		{
+			if (positive && (res > INT_MAX / 10 || res * 10 > INT_MAX - x % 10))
+				return 0;
+			if (!positive && (res < INT_MIN / 10 || res * 10 < INT_MIN - x % 10))
+				return 0;
+			res = res * 10 + x % 10;
+			x /= 10;
+		}
+		return res;
+	}
 };
 
 int main() 
