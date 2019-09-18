@@ -71,6 +71,8 @@ update 2019.9.17
 题目：[给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。](https://leetcode-cn.com/problems/reverse-integer/)  
 update 2019.2.28  
 将x取余，得到每位的值，加上res上，再讲x/10。这道题主要考察的应该是越界。
+update 2019.9.18  
+本题相对简单，主要就是考察越界情况的判断。
 
 ## 字符串转换整数 (atoi)
 题目：[请你来实现一个 atoi 函数，使其能将字符串转换成整数。](https://leetcode-cn.com/problems/string-to-integer-atoi/)  
