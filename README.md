@@ -77,7 +77,10 @@ update 2019.9.18
 ## 字符串转换整数 (atoi)
 题目：[请你来实现一个 atoi 函数，使其能将字符串转换成整数。](https://leetcode-cn.com/problems/string-to-integer-atoi/)  
 update 2019.2.28  
-第二次做这道题的时候，考虑还是不全，没考虑到'+'号，导致出错。而且，往前的写法，将整数和负数分开处理，思路相对更加清晰，值得推荐。
+第二次做这道题的时候，考虑还是不全，没考虑到'+'号，导致出错。而且，往前的写法，将正数和负数分开处理，思路相对更加清晰，值得推荐。
+
+update 2019.9.21  
+再次做这道题的时候，依然没有考虑到'+'号的情况。这边写法思路很清晰，把正数和负数统一处理。其实，这道题应该还可以使用[正则表达式来进行解决](https://leetcode-cn.com/problems/string-to-integer-atoi/solution/python-1xing-zheng-ze-biao-da-shi-by-knifezhu/)。
 
 ## 回文数
 题目：[判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数](https://leetcode-cn.com/problems/palindrome-number/)  
