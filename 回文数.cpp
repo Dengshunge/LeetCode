@@ -53,6 +53,25 @@ public:
 		}
 		return (num==x || num /10 == x);
     	}
+	
+	//update 2019.9.23
+	bool isPalindrome3(int x) 
+	{
+		if (x < 0 || (x != 0 && x % 10 == 0))
+			return false;
+		if (x >= 0 && x < 10)
+			return true;
+		int res = 0;
+		while (x>res)
+		{
+			int tmp = x % 10;
+			res = res * 10 + tmp;
+			x = x / 10;
+			if (res == x || res == x / 10)
+				return true;
+		}
+		return false;
+	}
 };
 
 
