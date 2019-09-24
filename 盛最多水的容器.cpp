@@ -69,6 +69,24 @@ public:
 		}
 		return val;
 	}
+	
+	//update 2019.9.24
+	int maxArea2(vector<int>& height) 
+	{
+		int max_water = 0;
+		int left = 0, right = height.size() - 1;
+		while (left<right)
+		{
+			int length = right - left;
+			int width = min(height[left], height[right]);
+			max_water = (max_water > length*width) ? max_water : length * width;
+			if (height[left] > height[right])
+				--right;
+			else
+				++left;
+		}
+		return max_water;
+	}
 };
 
 
