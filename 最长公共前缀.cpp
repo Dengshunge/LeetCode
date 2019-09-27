@@ -109,6 +109,28 @@ public:
 	}
 };
 
+//update 2019.9.27
+class Solution3 {
+public:
+	string longestCommonPrefix(vector<string>& strs) 
+	{
+		string res;
+		if (strs.empty())
+			return res;
+		for (int i = 0; i < strs[0].size(); ++i)
+		{
+			char tmp = strs[0][i];
+			for (int m = 1; m < strs.size(); ++m)
+			{
+				if (i >= strs[m].size() || strs[m][i] != tmp)
+					return res;
+			}
+			res += tmp;
+		}
+		return res;
+	}
+};
+
 int main()
 {
 	Solution a;
