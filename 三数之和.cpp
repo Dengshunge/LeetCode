@@ -50,6 +50,38 @@ public:
 		}
 		return vector<vector<int>>(res.begin(), res.end());
 	}
+	
+	//update 2019.9.28
+	vector<vector<int>> threeSum(vector<int>& nums) 
+	{
+		set<vector<int>> res;
+		sort(nums.begin(), nums.end());
+		for (int i = 0; i < nums.size() && nums[i] <= 0; ++i)
+		{
+			if (i != 0 && nums[i] == nums[i - 1])
+				continue;
+			for (int left = i+1, right = nums.size()-1; left < right&&nums[right] >= 0;)
+			{
+				int tmp = nums[left] + nums[right];
+				if (tmp == -nums[i])
+				{
+					res.insert(vector<int>({ nums[i],nums[left],nums[right] }));
+					while (left < right&&nums[right] == nums[right - 1])
+						right--;
+					right--;
+					while (left < right&&nums[left] == nums[left + 1])
+						left++;
+					left++;
+				}
+				else if (nums[left] + nums[right] > -nums[i])
+					--right;
+				else
+					++left;
+			}
+			
+		}
+		return vector<vector<int>>(res.begin(), res.end());
+	}
 };
 
 int main() 
