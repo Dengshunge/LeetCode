@@ -136,7 +136,9 @@ update 2019.9.28
 ## 最接近的三数之和
 题目：[给定一个包括n个整数的数组nums和一个目标值target。找出nums中的三个整数，使得它们的和与target最接近。返回这三个数的和。](https://leetcode-cn.com/problems/3sum-closest/)  
 update 2019.3.18  
-和上一题的做法类似，设置三个指针。但我以前的做法更加好，会跳过重复的元素。
+和上一题的做法类似，设置三个指针。但我以前的做法更加好，会跳过重复的元素。  
+update 2019.9.29  
+和上道题一样，只是判断条件不一样。
 
 ## 电话号码的字母组合
 题目：[给定一个仅包含数字2-9的字符串，返回所有它能表示的字母组合。给出数字到字母的映射如下（与电话按键相同）](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)  
