@@ -77,6 +77,31 @@ public:
 		}
 		return res;
 	}
+	
+	//update 2019.9.29
+	int threeSumClosest3(vector<int>& nums, int target) 
+	{
+		int min_sum = nums[0] + nums[1] + nums[2];
+		sort(nums.begin(), nums.end());
+		for (auto iter = nums.begin(); iter < nums.end(); ++iter)
+		{
+			if (iter != nums.begin() && *iter == *(iter - 1))
+				continue;
+			for (auto left = iter + 1, right = nums.end() - 1; left < right;)
+			{
+				int tmp = *iter + *left + *right - target;
+				if (abs(tmp) < abs(min_sum - target))
+					min_sum = *iter + *left + *right;
+				if (tmp == 0)
+					return min_sum;
+				else if (tmp > 0)
+					right--;
+				else
+					left++;
+			}
+		}
+		return min_sum;
+	}
 };
 
 int main()
