@@ -100,6 +100,35 @@ private:
 	}
 };
 
+//update 2019.10.1
+class Solution3 {
+public:
+	vector<string> letterCombinations(string digits)
+	{
+		if (digits.empty())
+			return res;
+		string s;
+		letterCombinations(digits, s);
+		return res;
+	}
+private:
+	vector<string> res;
+	vector<string> numMap = { "","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz" };
+	void letterCombinations(string digits, string s)
+	{
+		if (digits.empty())
+		{
+			res.push_back(s);
+			return;
+		}
+		string loop_string = numMap[digits[0] - '0'];
+		for (auto iter = loop_string.begin(); iter < loop_string.end(); ++iter)
+		{
+			letterCombinations(digits.substr(1, digits.size() - 1), s + *iter);
+		}
+	}
+};
+
 int main()
 {
 	Solution a;
