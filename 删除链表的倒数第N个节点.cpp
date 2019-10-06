@@ -39,6 +39,23 @@ public:
 		p2->next = p2->next->next;
 		return head;
 	}
+	
+	//2019.10.6
+	ListNode* removeNthFromEnd(ListNode* head, int n) 
+	{
+		ListNode *pNext = head, *pCur = head;
+		while (n--)
+			pNext = pNext->next;
+		if (!pNext)
+			return head->next;
+		while (pNext->next!=NULL)
+		{
+			pNext = pNext->next;
+			pCur = pCur->next;
+		}
+		pCur->next = pCur->next->next;
+		return head;
+	}
 };
 
 int main()
