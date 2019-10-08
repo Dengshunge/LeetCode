@@ -49,6 +49,31 @@ private:
 	vector<string> res;
 };
 
+//update 2019.10.8
+class Solution {
+public:
+	vector<string> generateParenthesis(int n) 
+	{
+		vector<string> res;
+		generateParenthesis(n, 0, 0, "", res);
+		return res;
+	}
+	void generateParenthesis(int n, int left,int right, string s, vector<string> &res)
+	{
+		if (right > left)
+			return;
+		if (n == left)
+		{
+			int tmp = left - right;
+			s += string(tmp, ')');
+			res.push_back(s);
+			return;
+		}
+		generateParenthesis(n, left + 1, right, s + '(', res);
+		generateParenthesis(n, left, right + 1, s + ')', res);
+	}
+};
+
 
 int main()
 {
