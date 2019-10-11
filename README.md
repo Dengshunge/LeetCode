@@ -178,3 +178,9 @@ update 2019.10.9
 题目：[给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)  
 update 2019.10.10  
 思路是设置双指针i和j，当nums[i]!=nums[j]时，才进行赋值，直至循环到末尾。但从这题中可以得到例外一种思路，通常都是思考nums[i]==nums[j]，++j；但是如果反过来想，外面设置一个大循环，只有当nums[i]!=nums[j]才赋值，这样的代码会简洁很多。
+
+## 移除元素
+题目：[给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度](https://leetcode-cn.com/problems/remove-element/)  
+update 2019.10.11
+和上一题一样的思路
+
