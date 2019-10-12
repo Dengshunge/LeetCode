@@ -181,6 +181,11 @@ update 2019.10.10
 
 ## 移除元素
 题目：[给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度](https://leetcode-cn.com/problems/remove-element/)  
-update 2019.10.11
+update 2019.10.11  
 和上一题一样的思路
+
+## 实现strStr()
+题目：[给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)](https://leetcode-cn.com/problems/implement-strstr/)  
+update 2019.10.12  
+本质上是KMP算法的考察。但你可以用暴力解法，只是复杂度比较高O(MN),而KMP算法的复杂度为O(M+N)。KMP算法可以参考[这篇文章](https://subetter.com/algorithm/kmp-algorithm.html)
 
