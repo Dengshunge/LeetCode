@@ -189,3 +189,6 @@ update 2019.10.11
 update 2019.10.12  
 本质上是KMP算法的考察。但你可以用暴力解法，只是复杂度比较高O(MN),而KMP算法的复杂度为O(M+N)。KMP算法可以参考[这篇文章](https://subetter.com/algorithm/kmp-algorithm.html)
 
+## 两数相除
+题目：[给定两个整数，被除数 dividend 和除数 divisor](https://leetcode-cn.com/problems/divide-two-integers/)  
+这题是真卡了很久，原本以为需要使用位运算，异或，与非之类的，发现都行不通。最后还是暴力解法的优化版本。但这里有个技巧，为了防止越界，都把数字转换为负数进行计算。但这个代码在leetcode上跑不通，因为Leetcode不支持负数移位。
