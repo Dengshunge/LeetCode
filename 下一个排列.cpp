@@ -41,6 +41,34 @@ public:
 	}
 };
 
+//
+class Solution2 {
+public:
+ 	void nextPermutation(vector<int>& nums) 
+	{
+		if (nums.size() == 0)
+			return;
+		int i = nums.size() - 1;
+		while (i > 0)
+		{
+			if (nums[i] > nums[i - 1])
+				break;
+			i--;
+		}
+		if (i == 0)
+			return reverse(nums.begin(), nums.end());
+		int j = i + 1;
+		while (j < nums.size())
+		{
+			if (nums[j] <= nums[i - 1])
+				break;
+			j++;
+		}
+		swap(nums[i - 1], nums[j - 1]);
+		reverse(nums.begin() + i, nums.end());
+	}
+};
+
 int main()
 {
 	vector<int> nums{ 1,5,1 };
