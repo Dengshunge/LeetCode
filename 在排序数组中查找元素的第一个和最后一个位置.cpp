@@ -86,6 +86,51 @@ public:
 	}
 };
 
+//update 2019.10.17
+class Solution3 {
+public:
+	vector<int> searchRange(vector<int>& nums, int target) 
+	{
+		if (nums.empty())
+			return { -1,-1 };
+		int left = Search(nums, target, 0, nums.size() - 1, true);
+		if (left == -1)
+			return { -1,-1 };
+		int right = Search(nums, target, left, nums.size() - 1, false);
+		return { left,right };
+	}
+private:
+	int Search(vector<int>& nums, int target, int left, int right, bool flag)
+	{
+		while (left <= right)
+		{
+			int mid = (left + right) >> 1;
+			if (nums[mid] == target)
+			{
+				if (flag)
+				{
+					if (mid == 0 || nums[mid] > nums[mid - 1])
+						return mid;
+					else
+						right = mid - 1;
+				}
+				else
+				{
+					if (mid == nums.size() - 1 || nums[mid] < nums[mid + 1])
+						return mid;
+					else
+						left = mid + 1;
+				}
+			}
+			else if (target < nums[mid])
+				right = mid - 1;
+			else
+				left = mid + 1;
+		}
+		return -1;
+	}
+};
+
 
 int main()
 {
