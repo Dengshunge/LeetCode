@@ -219,4 +219,9 @@ update 2019.10.20
 ## x的平方根
 题目：[实现int sqrt\(int x\) 函数](https://leetcode-cn.com/problems/sqrtx/)  
 update 2019.10.20  
-本题有两种方法，一种是二分法，另外一种是牛顿法。这里这次使用了二分法，但这里二分法遇到了问题，就是越界问题，需要使用long long 来处理。同时left+right+1，会先计算right+1,如果right+1是Int的话，就可能会越界，因此，可以将right定义为Long
+本题有两种方法，一种是二分法，另外一种是牛顿法。这里这次使用了二分法，但这里二分法遇到了问题，就是越界问题，需要使用long long 来处理。同时left+right+1，会先计算right+1,如果right+1是Int的话，就可能会越界，因此，可以将right定义为Long。
+
+## 寻找旋转排序数组中的最小值
+题目：[假设按照升序排序的数组在预先未知的某个点上进行了旋转，请找出其中最小的元素](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)  
+update 2019.10.20  
+二分查找，每次都与最右边的值比较，当大于最右边的值时,说明在mid的右边,left=mid+1。
