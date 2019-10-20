@@ -205,3 +205,8 @@ update 2019.10.12
 ## 在排序数组中查找元素的第一个和最后一个位置
 题目：[给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)  
 看到题目要求是logN的复杂度，首先应该想到二分查找。利用二分查找查找重复元素的起点与末尾。但这一次，写的程序依然比较冗余。因为在二分查找的时候，固定思维是判断nums\[mid\]==target，从简洁的代码来看，判断条件不是这个，而是nums\[mid\]>target。说明我对二分理解只是形式上的理解，还未深入。
+
+## 搜索插入位置
+题目：[给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置](https://leetcode-cn.com/problems/search-insert-position/)  
+update 2019.10.20  
+有序数组的搜索，一般都可以用二分查找，注意，需要有序。另外，看了题目的解析，发现自己对二分查找或者说夹逼法不是很了解，可以看看[这篇文章](https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/)，了解一下夹逼法的模板。夹逼是思想，二分是手段
