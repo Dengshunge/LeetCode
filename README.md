@@ -210,3 +210,8 @@ update 2019.10.12
 题目：[给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置](https://leetcode-cn.com/problems/search-insert-position/)  
 update 2019.10.20  
 有序数组的搜索，一般都可以用二分查找，注意，需要有序。另外，看了题目的解析，发现自己对二分查找或者说夹逼法不是很了解，可以看看[这篇文章](https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/)，了解一下夹逼法的模板。夹逼是思想，二分是手段
+
+## 二分查找
+题目：[给定一个n个元素有序的（升序）整型数组nums和一个目标值target，写一个函数搜索nums中的target，如果目标值存在返回下标，否则返回-1](https://leetcode-cn.com/problems/binary-search/)  
+update 2019.10.20  
+练习使用二分查找，这道题注意点是使用unsigner int mid = (left+right)>>1，是为了防止越界。
