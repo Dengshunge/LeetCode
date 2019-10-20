@@ -215,3 +215,8 @@ update 2019.10.20
 题目：[给定一个n个元素有序的（升序）整型数组nums和一个目标值target，写一个函数搜索nums中的target，如果目标值存在返回下标，否则返回-1](https://leetcode-cn.com/problems/binary-search/)  
 update 2019.10.20  
 练习使用二分查找，这道题注意点是使用unsigner int mid = (left+right)>>1，是为了防止越界。
+
+## x的平方根
+题目：[实现int sqrt\(int x\) 函数](https://leetcode-cn.com/problems/sqrtx/)  
+update 2019.10.20  
+本题有两种方法，一种是二分法，另外一种是牛顿法。这里这次使用了二分法，但这里二分法遇到了问题，就是越界问题，需要使用long long 来处理。同时left+right+1，会先计算right+1,如果right+1是Int的话，就可能会越界，因此，可以将right定义为Long
