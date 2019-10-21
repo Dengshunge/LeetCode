@@ -225,3 +225,8 @@ update 2019.10.20
 题目：[假设按照升序排序的数组在预先未知的某个点上进行了旋转，请找出其中最小的元素](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)  
 update 2019.10.20  
 二分查找，每次都与最右边的值比较，当大于最右边的值时,说明在mid的右边,left=mid+1。
+
+## 寻找峰值
+题目：[给定一个输入数组nums，其中nums\[i\]≠nums\[i+1\]，找到峰值元素并返回其索引](https://leetcode-cn.com/problems/find-peak-element/)  
+update 2019.10.21  
+同样是二分查找，但这道题卡住我的地方是，nums\[mid\]和谁比较。一开始，我和nums\[left\]比较，发现不行，后来才想到和nums\[mid\]比较。因此，二分查找同样要想清楚比较的对象。
