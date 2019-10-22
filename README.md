@@ -230,3 +230,8 @@ update 2019.10.20
 题目：[给定一个输入数组nums，其中nums\[i\]≠nums\[i+1\]，找到峰值元素并返回其索引](https://leetcode-cn.com/problems/find-peak-element/)  
 update 2019.10.21  
 同样是二分查找，但这道题卡住我的地方是，nums\[mid\]和谁比较。一开始，我和nums\[left\]比较，发现不行，后来才想到和nums\[mid\]比较。因此，二分查找同样要想清楚比较的对象。
+
+## 长度最小的子数组
+题目：[给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/)  
+update 2019.10.22  
+这道题有两种方法，方法一是利用双指针或者滑窗的思想；方法二，是利用二分查找。首先，这是一个无序的数组，得转换成一个有序的数组，这个思想很巧妙，对数组的元素进行叠加，这样就是一个升序的数组sums。循环查询sums中每个元素，对于sums\[i\]而言，需要查找的元素是to_find=sums\[i\]+s，找到第一个不小于to_find的元素。
