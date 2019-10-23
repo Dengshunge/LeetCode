@@ -88,6 +88,31 @@ public:
 	}
 };
 
+//update 2019.10.20
+class Solution2 {
+public:
+	bool isValidSudoku(vector<vector<char>>& board) 
+	{
+		vector<set<int>> row(9);
+		vector<set<int>> column(9);
+		vector<set<int>> box(9);
+		for (int i =0;i<9;++i)
+			for (int j = 0; j < 9; ++j)
+			{
+				if (board[i][j] == '.')
+					continue;
+				if (row[i].find(board[i][j]) != row[i].end() 
+					|| column[j].find(board[i][j]) != column[j].end() 
+					|| box[(i / 3) * 3 + (j / 3)].find(board[i][j]) != box[(i / 3) * 3 + (j / 3)].end())
+					return false;
+				row[i].insert(board[i][j]);
+				column[j].insert(board[i][j]);
+				box[(i / 3) * 3 + (j / 3)].insert(board[i][j]);
+			}
+		return true;
+	}
+};
+
 
 
 int main()
