@@ -240,3 +240,8 @@ update 2019.10.22
 题目：[给定一个已按照升序排列的有序数组，找到两个数使得它们相加之和等于目标数](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/)  
 update 2019.10.22  
 这道题和leetcode第一道题一样，使用字典来存储即可。但是，这里有个条件——升序排序，即这个是有序数组。更优的解法是，设置双指针，指向开头和结尾，当两数之和大于target时，移动右指针，以此类推。
+
+## 有效的数独
+题目：[判断一个 9x9 的数独是否有效](https://leetcode-cn.com/problems/valid-sudoku/)  
+update 2019.10.23  
+第一想法是暴力循环，之后想到，用空间换效率，创建表示行、列、方格的vector,当遍历数独的时候，查找这3个vector是否存在该元素，但不存在时，则插入。但网上有种更加便捷的方法，同样是创建3个vector，但是3个vector是定长的bool，通过改变bool值，同时查找的效率是O(1),而在set中查找，效率是O(logN).
