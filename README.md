@@ -245,3 +245,8 @@ update 2019.10.22
 题目：[判断一个 9x9 的数独是否有效](https://leetcode-cn.com/problems/valid-sudoku/)  
 update 2019.10.23  
 第一想法是暴力循环，之后想到，用空间换效率，创建表示行、列、方格的vector,当遍历数独的时候，查找这3个vector是否存在该元素，但不存在时，则插入。但网上有种更加便捷的方法，同样是创建3个vector，但是3个vector是定长的bool，通过改变bool值，同时查找的效率是O(1),而在set中查找，效率是O(logN).
+
+## 报数
+题目：[报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数](https://leetcode-cn.com/problems/count-and-say/)  
+update 2019.10.24  
+按照常规思维，循环遍历即可。
