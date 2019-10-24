@@ -43,6 +43,30 @@ public:
 		}
 		return res.back();
 	}
+	
+	//
+	string countAndSay(int n) 
+	{
+		string s = "1";
+		for (int i = 2; i <= n; ++i)
+		{
+			int j = 0;
+			string tmp = "";
+			while (j < s.size())
+			{
+				int num = 0;
+				char each_char = s[j];
+				while (each_char == s[j])
+				{
+					num++;
+					j++;
+				}
+				tmp += to_string(num) + each_char;
+			}
+			s = tmp;
+		}
+		return s;
+	}
 };
 
 
