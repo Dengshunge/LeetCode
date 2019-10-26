@@ -250,3 +250,8 @@ update 2019.10.23
 题目：[报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数](https://leetcode-cn.com/problems/count-and-say/)  
 update 2019.10.24  
 按照常规思维，循环遍历即可。
+
+## 爬楼梯
+题目：[假设你正在爬楼梯。需要n阶你才能到达楼顶。每次你可以爬1或2个台阶。你有多少种不同的方法可以爬到楼顶呢](https://leetcode-cn.com/problems/climbing-stairs/)  
+update 2019.10.26  
+本道题可以用动态规划的思想，第i阶楼梯由第i-1阶和第i-2阶楼梯所决定，因此dp(i)=dp(i-1)+dp(i-2)。
