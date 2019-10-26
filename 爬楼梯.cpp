@@ -25,6 +25,21 @@ public:
 		}
 		return res.back();
 	}
+	
+	//update 2019.10.26
+	int climbStairs2(int n) 
+	{
+		if (n == 1 || n == 2)
+			return n;
+		vector<int> res(n + 1, 0);
+		res[1] = 1;
+		res[2] = 2;
+		for (int i = 3; i <= n; ++i)
+		{ 
+			res[i] = res[i - 1] + res[i - 2];
+		}
+		return res.back();
+	}
 };
 
 int main() 
