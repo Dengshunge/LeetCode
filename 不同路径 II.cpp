@@ -54,6 +54,31 @@ public:
 		}
 		return res[m - 1][n - 1];
 	}
+
+        //update 2019.10.29
+	int uniquePathsWithObstacles2(vector<vector<int>>& obstacleGrid) 
+	{
+		int m = obstacleGrid.size(), n = obstacleGrid[0].size();
+		if (obstacleGrid[0][0])
+			return 0;
+		vector<vector<long long>> dp(m, vector<long long>(n, 1));
+		int i = 1;
+		for (; i < n; ++i)
+			if (obstacleGrid[0][i])
+				break;
+		for (; i < n; i++)
+			dp[0][i] = 0;
+		i = 1;
+		for (; i < m; ++i)
+			if (obstacleGrid[i][0])
+				break;
+		for (; i < m; i++)
+			dp[i][0] = 0;
+		for (int i = 1; i<m; ++i)
+			for (int j = 1; j < n; ++j)
+				dp[i][j] = (obstacleGrid[i][j] == 1) ? 0 : dp[i - 1][j] + dp[i][j - 1];
+		return dp[m - 1][n - 1];
+	}
 };
 
 int main() 
