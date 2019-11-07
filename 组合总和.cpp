@@ -50,6 +50,36 @@ public:
 	}
 };
 
+//update 2019.11.7
+class Solution2 {
+public:
+	vector<vector<int>> combinationSum(vector<int>& candidates, int target) 
+	{
+		if (candidates.empty())
+			return {};
+		sort(candidates.begin(), candidates.end());
+		combinationSum(candidates, target, 0);
+		return res;
+	}
+
+private:
+	vector<vector<int>> res;
+	vector<int> path;
+	void combinationSum(vector<int> &candidates, int target, int begin)
+	{
+		if (target == 0)
+		{
+			res.push_back(path);
+			return;
+		}
+		for (int i = begin; i < candidates.size() && candidates[i] <= target; ++i)
+		{
+			path.push_back(candidates[i]);
+			combinationSum(candidates, target - candidates[i], i);
+			path.pop_back();
+		}
+	}
+};
 
 
 int main()
