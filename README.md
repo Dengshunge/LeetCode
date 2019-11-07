@@ -290,3 +290,8 @@ update 2019.11.3
 题目：[你是一个专业的小偷，计划偷窃沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都围成一圈，这意味着第一个房屋和最后一个房屋是紧挨着的。同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。](https://leetcode-cn.com/problems/house-robber-ii/)  
 update 2019.11.3  
 与上道题的区别是，这道题是一个环形，而上一道题是单排列。对于环形，可以对最后一个元素分成选还是不选，当选取最后一个元素的时候，就变成了在nums\[1:nums.size()-1\]的问题，当不选取最后一个元素时，则是nums\[0:nums.size()-2\]的问题。分别计算这两个问题的解，选取最大值即可。
+
+## 组合综合
+题目：[给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。](https://leetcode-cn.com/problems/combination-sum/)  
+update 2019.11.7  
+这道题使用回溯法，[回溯法的思路是画图，画一个树状图，树状图中体现递归的结构](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)。回溯法，还有一个关键是，思考结束条件。
