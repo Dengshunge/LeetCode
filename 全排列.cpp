@@ -45,6 +45,32 @@ public:
 	}
 };
 
+//update 2019.11.9
+class Solution2 {
+public:
+	vector<vector<int>> permute(vector<int>& nums) 
+	{ 
+		helper(nums, 0);
+		return res;
+
+	}
+private:
+	vector<vector<int>> res;
+	void helper(vector<int> &nums,int index)
+	{
+		if (index == nums.size())
+		{
+			res.push_back(nums);
+			return;
+		}
+		for (int i = index; i < nums.size(); ++i)
+		{
+			swap(nums[index], nums[i]);
+			helper(nums, index + 1);
+			swap(nums[index], nums[i]);
+		}
+	}
+};
 int main()
 {
 	vector<int> nums{ 1,2,3 };
