@@ -300,3 +300,8 @@ update 2019.11.7
 题目：[给定一个没有重复数字的序列，返回其所有可能的全排列](https://leetcode-cn.com/problems/permutations/)  
 update 2019.11.9  
 使用回溯法，交换第i个元素和第index个元素，然后递归解决第index+1个元素之后的问题。
+
+## 旋转图像
+题目：[给定一个 n × n 的二维矩阵表示一个图像。将图像顺时针旋转 90 度。](https://leetcode-cn.com/problems/rotate-image/)  
+update 2019.11.9  
+有两种方法，一种是寻找坐标的规律，坐标的变化为\[i,j\]->\[j,n-1-i\]。第二种方法是先转置，后对每一行进行翻转。第二种方法需要操作两次矩阵。
