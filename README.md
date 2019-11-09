@@ -295,3 +295,8 @@ update 2019.11.3
 题目：[给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。](https://leetcode-cn.com/problems/combination-sum/)  
 update 2019.11.7  
 这道题使用回溯法，[回溯法的思路是画图，画一个树状图，树状图中体现递归的结构](https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/)。回溯法，还有一个关键是，思考结束条件。
+
+## 全排列
+题目：[给定一个没有重复数字的序列，返回其所有可能的全排列](https://leetcode-cn.com/problems/permutations/)  
+update 2019.11.9  
+使用回溯法，交换第i个元素和第index个元素，然后递归解决第index+1个元素之后的问题。
