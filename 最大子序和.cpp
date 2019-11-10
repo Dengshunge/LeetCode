@@ -32,6 +32,33 @@ public:
 		}
 		return nMaxSum;
 	}
+	
+	//update 2019.11.10
+	int maxSubArray2(vector<int>& nums) 
+	{
+		if (nums.empty())
+			return 0;
+		int maxadd = nums[0];
+		int left = 0, right = 0;
+		int cur = nums[0];
+		while (right < nums.size() - 1)
+		{
+			if (cur <= 0)
+			{
+				right++;
+				left = right;
+				cur = nums[left];
+			}
+			else
+			{
+				right++;
+				cur += nums[right];
+			}
+			if (cur > maxadd)
+				maxadd = cur;
+		}
+		return maxadd;
+	}
 };
 
 
