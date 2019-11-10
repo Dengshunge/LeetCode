@@ -83,6 +83,24 @@ public:
 	}
 };
 
+//update 2019.11.10
+class Solution2 {
+public:
+	vector<vector<string>> groupAnagrams(vector<string>& strs)
+	{
+		map<string, vector<string>> strsmap;
+		for (auto s : strs)
+		{
+			string c = s;
+			sort(c.begin(), c.end());
+			strsmap[c].push_back(s);
+		}
+		vector<vector<string>> res;
+		for (auto iter : strsmap)
+			res.push_back(iter.second);
+		return res;
+	}
+};
 
 
 int main()
