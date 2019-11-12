@@ -55,7 +55,45 @@ public:
 	}
 };
 
+//update 2019.11.12
+class Solution2 {
+public:
+	bool canJump(vector<int>& nums) 
+	{
+		int k = 0;
+		for (int i = 0; i < nums.size(); ++i)
+		{
+			if (i > k)
+				return false;
+			k = max(k, i + nums[i]);
+			if (k >= nums.size() - 1)
+				break;
+		}
+		return true;
+	}
+};
 
+class Solution3
+{
+public:
+	bool canJump(vector<int> &nums)
+	{
+		return helper(nums, 0);
+	}
+private:
+	bool helper(vector<int> &nums, int position)
+	{
+		if (position == nums.size() - 1)
+			return true;
+		int furthestJump = min(int(nums.size() - 1), position + nums[position]);
+		for (int nextPosition = position + 1; nextPosition <= furthestJump; nextPosition++)
+		{
+			if (helper(nums, nextPosition))
+				return true;
+		}
+		return false;
+	}
+};
 
 int main()
 {
