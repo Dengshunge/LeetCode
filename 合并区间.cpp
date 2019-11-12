@@ -51,7 +51,26 @@ public:
 	}
 };
 
-
+//update 2019.11.12
+class Solution2 {
+public:
+	vector<vector<int>> merge(vector<vector<int>>& intervals) 
+	{
+		if (intervals.empty())
+			return {};
+		sort(intervals.begin(), intervals.end());
+		vector<vector<int>> res{ intervals[0] };
+		for (int i = 1; i < intervals.size(); ++i)
+		{
+			vector<int> &tmp = res.back();
+			if (intervals[i][0] <= tmp[1])
+				tmp[1] = max(tmp[1], intervals[i][1]);
+			else
+				res.push_back(intervals[i]);
+		}
+		return res;
+	}
+};
 
 int main()
 {
