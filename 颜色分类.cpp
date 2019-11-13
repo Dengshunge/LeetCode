@@ -85,6 +85,36 @@ public:
 
 };
 
+//
+class Solution2 {
+public:
+	void sortColors(vector<int>& nums) 
+	{
+		vector<int> times(3, 0);
+		for (auto num : nums)
+			times[num] += 1;
+		int index = 0;
+		for (int i = 0; i < times.size(); ++i)
+		{
+			for (int j = 0; j < times[i]; ++j)
+				nums[index++] = i;
+		}
+	}
+
+	void sortColors2(vector<int>& nums)
+	{
+		int p0 = 0, p2 = nums.size() - 1, cur = 0;
+		while (cur <= p2)
+		{
+			if (nums[cur] == 0)
+				swap(nums[cur++], nums[p0++]);
+			else if (nums[cur] == 2)
+				swap(nums[cur], nums[p2--]);//注意，这里cur没有自增，因为不确定交换后是否条件
+			else
+				cur++;
+		}
+	}
+};
 int main() 
 {
 	Solution a;
