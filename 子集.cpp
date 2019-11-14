@@ -36,6 +36,29 @@ public:
 	}
 };
 
+//update 2019.11.14
+class Solution2 {
+public:
+	vector<vector<int>> subsets(vector<int>& nums) 
+	{
+		helper(nums, 0);
+		return res;
+	}
+private:
+	vector<vector<int>> res;
+	vector<int> path;
+	void helper(vector<int>& nums, int index)
+	{
+		res.push_back(path);
+		for (int i = index; i < nums.size(); i++)
+		{
+			path.push_back(nums[i]);
+			helper(nums, i + 1);
+			path.pop_back();
+		}
+	}
+};
+
 int main() 
 {
 	Solution a;
