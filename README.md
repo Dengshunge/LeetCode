@@ -366,3 +366,7 @@ def 回溯算法():
     return false
 ```
 
+## 相交链表
+题目：[编写一个程序，找到两个单链表相交的起始节点]（https://leetcode-cn.com/problems/intersection-of-two-linked-lists/）  
+update 2019.12.29  
+利用双指针，当指针走完链表时，指向另外一个链表，直到两指针指向同一节点，即为相交节点。
